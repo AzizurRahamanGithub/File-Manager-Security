@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+
+
+  /* Custom scrollbar for file lists */
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 116, 139, 0.4);
+    border-radius: 3px;
+  }
+
+  /* Fixed sidebar and navbar styles */
+  body {
+    overflow: hidden; /* Prevent body scrolling */
+    height: 100vh; /* Full viewport height */
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Allow sidebar to scroll if needed */
+    z-index: 10; /* Ensure sidebar stays above content */
+  }
+
+  main#container {
+    margin-left: 16rem; /* Same as sidebar width (64 = 16rem) */
+    height: 100vh;
+    overflow-y: auto; /* Allow main content to scroll */
+  }
+
+  /* Topbar fixed position */
+  #container > div:first-child {
+    position: sticky;
+    top: 0;
+    background: rgba(248, 250, 252, 0.9); /* bg-gray-50 with opacity */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    z-index: 5; /* Stay above content but below modals */
+    padding:2rem;
+  }
+
+  /* Ensure the browse section has proper spacing */
+  section {
+    padding-top: 1rem; /* Add space below sticky header */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    aside {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    main#container {
+      margin-left: 0;
+    }
+  }
+
+
+
+  /* #custom-paste-menu {
+    position: absolute;
+    display: none;
+}
+
+#custom-paste-menu .paste-option {
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+#custom-paste-menu .paste-option:hover {
+    background-color: #f0f0f0;
+} */
+
+
+.context-menu {
+  position: fixed;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 180px;
+}
+
+.menu-item {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #f0f0f0;
+}
+
+.menu-item.danger {
+  color: #e53e3e;
+}
+
+.menu-item.danger:hover {
+  background: #fff5f5;
+}
